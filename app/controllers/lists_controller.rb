@@ -47,7 +47,7 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:todo:text, :board_id:bigint, :created_at:datetime, :updated_at:datetime, :name)
+    params.require(:list).permit(:todo, :board_id)
   end
 
   

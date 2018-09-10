@@ -3,6 +3,10 @@
 <hr />
 <% @boards.each do |board| %>
   <%= board.message %>
-  <%= link_to 'Edit', edit_board_path(board.id) %>
-  <%= link_to 'Delete', board_path(board.id), method: :delete %>
+  <br />
+  <ul>
+    <li><%= link_to 'To do list', board_lists_path(@boards) %></li>
+    <li><%= link_to 'Edit', edit_board_path(board.id) %></li>
+    <li><%= link_to 'Delete', board_path(board.id), method: :delete %></li>
+  </ul>
 <% end %>
