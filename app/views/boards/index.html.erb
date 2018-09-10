@@ -1,2 +1,8 @@
-<h1>Boards#index</h1>
-<p>Find me in app/views/boards/index.html.erb</p>
+<h1>Main Job Board</h1>
+<%= link_to 'Create Board', new_board_path %>
+<hr />
+<% @boards.each do |board| %>
+  <%= board.message %>
+  <%= link_to 'Edit', edit_board_path(board.id) %>
+  <%= link_to 'Delete', board_path(board.id), method: :delete %>
+<% end %>
