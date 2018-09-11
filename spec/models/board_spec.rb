@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Board, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'message' do
+    it 'board message from user' do
+      
+    end
+  end
+
+
 end

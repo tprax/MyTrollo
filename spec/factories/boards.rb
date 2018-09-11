@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :board do
-    message { "MyText" }
+    message 'My First job'
   end
 end

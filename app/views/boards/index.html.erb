@@ -2,9 +2,8 @@
 <%= link_to 'Create Board', new_board_path %>
 <hr />
 <% @boards.each do |board| %>
-  <%= board.message %>
-  <br />
   <ul>
+  <h3><%= board.message %></h3>
     <li><%= link_to 'To do list', board_lists_path(@boards) %></li>
     <li><%= link_to 'Edit', edit_board_path(board.id) %></li>
     <li><%= link_to 'Delete', board_path(board.id), method: :delete %></li>
