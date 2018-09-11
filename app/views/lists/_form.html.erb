@@ -1,4 +1,5 @@
 <%= form_for [@board, @list] do |f| %>
-    <%= f.text :todo %>
+    <%= f.label :todo %>
+    <%= f.text_field :todo %>
     <%= f.submit %>
   <% end %>
