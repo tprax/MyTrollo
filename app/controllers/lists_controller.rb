@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :update, :edit, :destroy]
+  before_action :set_board
   def index
     @lists = List.all
   end
@@ -9,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def new
-    @list = List.new
+    @list = @board.lists.new
     render partial: "form"
   end
 
@@ -18,10 +19,10 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new(list_params)
+    @list = @board.lists.new(list_params)
 
     if @list.save
-      redirect_to lists_path
+      redirect_to board_lists_path
     else
       render :new
     end
@@ -37,7 +38,7 @@ class ListsController < ApplicationController
 
   def destroy
     @list.destroy
-    redirect_to lists_path
+    redirect_to board_lists_path
   end
 
   private
@@ -50,5 +51,8 @@ class ListsController < ApplicationController
     params.require(:list).permit(:todo, :board_id)
   end
 
+  def set_board
+    @board = Board.find(params[:board_id])
+  end
   
 end
