@@ -1,5 +1,8 @@
-<h1>Lists#index</h1>
-<%= link_to 'Back', boards_path %>
-<div>
-# <%= link_to 'New Todo', new_board_list_path() %>
-</div>
+<h1>To Do List</h1>
+  <%= link_to 'New Todo', new_board_list_path %>
+<hr />
+<% @lists.each do |list| %>
+<ol>
+  <li><%= list.todo %></li>
+</ol>
+<% end %>

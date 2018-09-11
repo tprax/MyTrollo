@@ -44,7 +44,7 @@ class ListsController < ApplicationController
   private
 
   def set_list
-    @list = @board.list.find(params[:id])
+    @list = List.find(params[:id])
   end
 
   def list_params
